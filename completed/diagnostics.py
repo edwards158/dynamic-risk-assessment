@@ -4,6 +4,8 @@ import timeit
 import os
 import json
 import pickle
+import subprocess
+import sys
 import common_functions
 
 # Load config.json and get environment variables
@@ -15,14 +17,16 @@ test_data_path = os.path.join(config['test_data_path'])
 prod_deployment_path = os.path.join(config['prod_deployment_path'])
 
 
-def model_predictions():
+def model_predictions(dataset_path):
     # read the deployed model and a test dataset, calculate predictions
     filename = os.path.join(prod_deployment_path, 'trainedmodel.pkl')
 
     with open(filename, 'rb') as file:
         model = pickle.load(file)
 
-    df = pd.read_csv(os.path.join(test_data_path, 'testdata.csv'))
+    if dataset_path is None:
+        dataset_path = "testdata.csv"
+    df = pd.read_csv(os.path.join(test_data_path, dataset_path))
 
     X_data, y_data = common_functions.get_columns()
 
@@ -55,7 +59,7 @@ def dataframe_summary():
 
     summary_list.append(summary_dict)
 
-    return summary_list
+    return str(summary_list)
 
 
 def missing_data_summary():
@@ -71,7 +75,7 @@ def missing_data_summary():
     summary_list.append(summary_dict)
 
     # return value should be a list containing all summary statistics
-    return summary_list
+    return str(summary_list)
 
 
 def execution_time():
@@ -92,15 +96,18 @@ def execution_time():
     timning_output.append(timing_dict)
 
     # return a list of 2 timing values in seconds
-    return timning_output
+    return str(timning_output)
 
 
 def outdated_packages_list():
-    os.system('python -m pip list  -o --format columns')
+    outdated_packages = subprocess.check_output(
+        ['pip', 'list', '--outdated']).decode(sys.stdout.encoding)
+
+    return str(outdated_packages)
 
 
 if __name__ == '__main__':
-    model_predictions()
+    model_predictions(None)
     dataframe_summary()
     missing_data_summary()
     execution_time()

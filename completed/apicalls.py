@@ -1,33 +1,32 @@
+import requests
 import os
-import subprocess
 import json
-
 
 with open('config.json', 'r') as f:
     config = json.load(f)
+model_path = os.path.join(config['output_model_path'])
 
-# curl -X POST http://0.0.0.0:8000/prediction?inputdata=hello
+# Specify a URL that resolves to your workspace
+URL = "http://127.0.0.1:8000"
+
 
 # Call each API endpoint and store the responses
-response1 = subprocess.run(
-    ['curl', '127.0.0.1:8000/prediction'], capture_output=True).stdout
-# print(response1.decode("utf-8"))
-response2 = subprocess.run(
-    ['curl', '127.0.0.1:8000/scoring'], capture_output=True).stdout
-# print(response2.decode("utf-8"))
-response3 = subprocess.run(
-    ['curl', '127.0.0.1:8000/summarystats'], capture_output=True).stdout
-# print(response3.decode("utf-8"))
-response4 = subprocess.run(
-    ['curl', '127.0.0.1:8000/diagnostics'], capture_output=True).stdout
-# print(response4.decode("utf-8"))
+headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 
-# combine all API responses
-responses = [response1.decode("utf-8"), response2.decode("utf-8"),
-             response3.decode("utf-8"), response4.decode("utf-8")]
+response1 = requests.post(
+    "%s/prediction" % URL, json={"dataset_path": "testdata.csv"}, headers=headers).text
+response2 = requests.get("%s/scoring" % URL, headers=headers).text
+response3 = requests.get("%s/summarystats" % URL, headers=headers).text
+response4 = requests.get("%s/diagnostics" % URL, headers=headers).text
+
+
+responses = response1 + "\n" + response2 + \
+    "\n" + response3 + "\n" + response4 + "\n"
 
 # write the responses to your workspace
-filename = os.path.join(config['output_model_path'], 'apireturns.txt')
+with open('config.json', 'r') as f:
+    config = json.load(f)
 
-with open(filename, "w") as f:
-    f.write(str(responses))
+
+with open(os.path.join(model_path, "apireturns.txt"), "w") as f:
+    f.write(responses)

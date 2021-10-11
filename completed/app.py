@@ -3,6 +3,7 @@ import json
 import os
 import diagnostics
 import scoring as score
+from flask import Flask, session, jsonify, request
 
 # Set up variables for use in our script
 app = Flask(__name__)
@@ -17,10 +18,10 @@ test_data_path = os.path.join(config['test_data_path'])
 prediction_model = None
 
 
-@app.route('/prediction')
+@app.route("/prediction", methods=['POST', 'OPTIONS'])
 def predict():
-    predictions = diagnostics.model_predictions()
-    print(predictions)
+    dataset_path = request.json.get('dataset_path')
+    predictions = diagnostics.model_predictions(dataset_path)
     return str(predictions)
 
 
@@ -40,7 +41,10 @@ def stats():
 def diag():
     execution_time = (diagnostics.execution_time())
     missing_values = (diagnostics.missing_data_summary())
-    return str((execution_time, missing_values))
+    package_data = (diagnostics.outdated_packages_list())
+    # return str((execution_time, missing_values))
+    return str("execution_time:" + execution_time + "\n" + "missing_values"
+               + missing_values + "\n" + "package_data" + "\n" + package_data)
 
 
 if __name__ == "__main__":
