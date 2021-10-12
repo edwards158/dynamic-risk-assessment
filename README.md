@@ -1,10 +1,6 @@
 # Dynamic Risk Assessment
 
-Imagine that you're the Chief Data Scientist at a big company that has 10,000 corporate clients. Your company is extremely concerned about attrition risk: the risk that some of their clients will exit their contracts and decrease the company's revenue. They have a team of client managers who stay in contact with clients and try to convince them not to exit their contracts. However, the client management team is small, and they're not able to stay in close contact with all 10,000 clients.
-
-The company needs you to create, deploy, and monitor a risk assessment ML model that will estimate the attrition risk of each of the company's 10,000 clients. If the model you create and deploy is accurate, it will enable the client managers to contact the clients with the highest risk and avoid losing clients and revenue.
-
-Creating and deploying the model isn't the end of your work, though. Your industry is dynamic and constantly changing, and a model that was created a year or a month ago might not still be accurate today. Set up regular monitoring of your model to ensure that it remains accurate and up-to-date. Set up processes and scripts to re-train, re-deploy, monitor, and report on your ML model, so that your company can get risk assessments that are as accurate as possible and minimize client attrition.
+Create, deploy, and monitor a risk assessment ML model that will estimate the attrition risk of each of a company's 10,000 clients. If the model you create and deploy is accurate, it will enable the client managers to contact the clients with the highest risk and avoid losing clients and revenue.
 
 ## Project Steps Overview
 Complete the project by proceeding through 5 steps:
@@ -18,7 +14,7 @@ Complete the project by proceeding through 5 steps:
 
 
 **Data Ingestion**
-- ingestion.py - Read data files into Python, and write them to an output file that will be your master dataset. Save a record of the files you've read
+- ==ingestion.py== - Read data files into Python, and write them to an output file that will be your master dataset. Save a record of the files you've read
 
 **Training, Scoring, and Deploying an ML Model**
 - training.py, scoring.py, deployment.py - training an ML model, generating scoring metrics for the model and deploying the trained model.
