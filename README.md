@@ -18,7 +18,12 @@ Complete the project by proceeding through 5 steps:
 
 
 **Data Ingestion**
-ingestion.py - Read data files into Python, and write them to an output file that will be your master dataset. Save a record of the files you've read
+- ingestion.py - Read data files into Python, and write them to an output file that will be your master dataset. Save a record of the files you've read
+
+**Training, Scoring, and Deploying an ML Model**
+- training.py, scoring.py, deployment.py - training an ML model, generating scoring metrics for the model and deploying the trained model.
+- 
+**Model and Data Diagnostics**
 
 
 Model training
