@@ -11,8 +11,6 @@ Complete the project by proceeding through 5 steps:
 - **Reporting** - Automatically generate plots and documents that report on model metrics. Provide an API endpoint that can return model predictions and metrics.
 - **Process Automation** -  Create a script and cron job that automatically run all previous steps at regular intervals.
 
-
-
 ### Data Ingestion
 - **ingestion.py** - Read data files into Python, and write them to an output file that will be your master dataset. Save a record of the files you've read
 
