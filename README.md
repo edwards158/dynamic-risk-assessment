@@ -13,8 +13,8 @@ Complete the project by proceeding through 5 steps:
 
 
 
-**Data Ingestion**
-- ingestion.py - Read data files into Python, and write them to an output file that will be your master dataset. Save a record of the files you've read
+### Data Ingestion
+- **ingestion.py** - Read data files into Python, and write them to an output file that will be your master dataset. Save a record of the files you've read
 
 **Training, Scoring, and Deploying an ML Model**
 - training.py, scoring.py, deployment.py - training an ML model, generating scoring metrics for the model and deploying the trained model.
@@ -23,5 +23,5 @@ Complete the project by proceeding through 5 steps:
 - diagnostics.py - script that performs diagnostic tests related to your model as well as your data.
 
 **Model Reporting**
-- reporting.py, app.py, apicalls.py - scripts that create ==reports== related to your ML model, its performance, and related diagnostics.
+- reporting.py, app.py, apicalls.py - scripts that create reports related to your ML model, its performance, and related diagnostics.
 
