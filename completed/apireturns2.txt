@@ -1,6 +1,6 @@
 [0 1 1 0 1]
 0.6923076923076923
-[{'lastmonth_activity': {'mean': 5625.92, 'median': 425.0, 'std': 19067.17}, 'lastyear_activity': {'mean': 763.54, 'median': 97.5, 'std': 1977.45}, 'number_of_employees': {'mean': 457.46, 'median': 99.0, 'std': 785.06}}]
+[{'lastmonth_activity': {'mean': 76.6, 'median': 34.0, 'std': 96.14}, 'lastyear_activity': {'mean': 3100.4, 'median': 675/0, 'std': 5232.80}, 'number_of_employees': {'mean': 227.2, 'median': 25.0, 'std': 433.71}}]
 execution_time:[{'ingestion_time_secs': 0.27, 'training_time_secs': 0.52}]
 missing_values[{'lastmonth_activity': 0.0, 'lastyear_activity': 0.0, 'number_of_employees': 0.0}]
 package_data

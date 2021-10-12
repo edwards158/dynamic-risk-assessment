@@ -1,5 +1,5 @@
 [0 1 1 0 1]
-0.6923076923076923
+0.5714285714285715
 [{'lastmonth_activity': {'mean': 5625.92, 'median': 425.0, 'std': 19067.17}, 'lastyear_activity': {'mean': 763.54, 'median': 97.5, 'std': 1977.45}, 'number_of_employees': {'mean': 457.46, 'median': 99.0, 'std': 785.06}}]
 execution_time:[{'ingestion_time_secs': 0.27, 'training_time_secs': 0.52}]
 missing_values[{'lastmonth_activity': 0.0, 'lastyear_activity': 0.0, 'number_of_employees': 0.0}]
@@ -10,7 +10,7 @@ certifi            2021.5.30 2021.10.8 wheel
 charset-normalizer 2.0.4     2.0.6     wheel
 click              7.1.2     8.0.3     wheel
 cryptography       3.4.8     35.0.0    wheel
-flake8             3.9.2     4.0.0     wheel
+flake8             3.9.2     4.0.1     wheel
 Flask              1.1.2     2.0.2     wheel
 gunicorn           20.0.4    20.1.0    wheel
 itsdangerous       1.1.0     2.0.1     wheel

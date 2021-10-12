@@ -18,7 +18,7 @@ output_figure_path = os.path.join(config['output_model_path'])
 def score_model():
     # calculate a confusion matrix using the test data and the deployed model
     # write the confusion matrix to the workspace
-    predictions = diagnostics.model_predictions()
+    predictions = diagnostics.model_predictions(None)
     df = pd.read_csv(os.path.join(test_data_path, 'testdata.csv'))
 
     _, y_data = common_functions.get_columns()
