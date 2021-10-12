@@ -12,7 +12,7 @@ Complete the project by proceeding through 5 steps:
 - **Process Automation** -  Create a script and cron job that automatically run all previous steps at regular intervals.
 
 ### Data Ingestion
-- **ingestion.py** - Read data files into Python, and write them to an output file that will be your master dataset. Save a record of the files you've read
+- **ingestion.py** - Read data files into Python, and write them to an output file that will be your master dataset.
 
 ### Training, Scoring, and Deploying an ML Model
 - **training.py, scoring.py, deployment.py** - training an ML model, generating scoring metrics for the model and deploying the trained model.
@@ -23,3 +23,5 @@ Complete the project by proceeding through 5 steps:
 ### Model Reporting
 - **reporting.py, app.py, apicalls.py** - scripts that create reports related to your ML model, its performance, and related diagnostics.
 
+### Process Automation
+- **fullprocess.py** - create script that automate the ML model scoring and monitoring process.
