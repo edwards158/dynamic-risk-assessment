@@ -23,23 +23,5 @@ Complete the project by proceeding through 5 steps:
 - diagnostics.py - script that performs diagnostic tests related to your model as well as your data.
 
 **Model Reporting**
-- reporting.py, app.py, apicalls.py - scripts that create reports related to your ML model, its performance, and related diagnostics.
+- reporting.py, app.py, apicalls.py - scripts that create ==reports== related to your ML model, its performance, and related diagnostics.
 
-
-Model training
-Model training and test can be done by python **main.py --choice train_model**
-
-Model score
-Check score on latest dvs saved model can be done by python **main.py --choice get_score**
-
-Run entire pipeline
-To run the entire pipeline in sequence, use python **main.py --choice all**
-
-Test API
-If testing FastAPi serving on local is needed, execute **uvicorn app_server:app --reload**
-
-Check Heroku deployed API
-Check Heroku deployed API using **python heroku_api_test.py**
-
-## CI/CD
-Every new commit triggers a [test pipeline](https://github.com/edwards158/fastapi-heroku/blob/master/.github/workflows/python-app.yml)&nbsp;. This triggers a pull from DVC and exectute Pytest and Flake8 with Github actions.  
