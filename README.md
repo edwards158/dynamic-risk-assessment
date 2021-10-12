@@ -17,7 +17,8 @@ Complete the project by proceeding through 5 steps:
 
 
 
-## Execution
+**Data Ingestion**
+
 
 Model training
 Model training and test can be done by python **main.py --choice train_model**
