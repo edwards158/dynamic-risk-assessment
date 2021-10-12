@@ -18,6 +18,7 @@ Complete the project by proceeding through 5 steps:
 
 
 **Data Ingestion**
+ingestion.py - Read data files into Python, and write them to an output file that will be your master dataset. Save a record of the files you've read
 
 
 Model training
